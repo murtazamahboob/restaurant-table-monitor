@@ -1,0 +1,42 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "restaurant-table-monitor"
+version = "1.0.0"
+description = "Camera-based restaurant table monitor: per-table state machine, 5-minute service timers, unattended and clean-tables-now alerts, POS integration, waiter-phone push and a live floor-map dashboard — offline, deterministic, pure NumPy."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [{ name = "Murtaza Mahboob" }]
+keywords = [
+    "restaurant",
+    "table-monitoring",
+    "state-machine",
+    "service-timer",
+    "alerts",
+    "computer-vision",
+    "offline-ai",
+    "python",
+    "numpy",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = ["numpy==1.26.4"]
+
+[project.optional-dependencies]
+dev = ["pytest==9.2.0"]
+
+[project.scripts]
+tablemonitor = "tablemonitor.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
