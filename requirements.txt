@@ -1,0 +1,6 @@
+# Pinned runtime dependencies (verified working with Python 3.10+).
+# The monitor is pure NumPy + stdlib — no YOLO, no GPU, no network.
+numpy==1.26.4
+
+# Dev / test dependency (also in pyproject.toml [project.optional-dependencies] dev).
+pytest==9.2.0
